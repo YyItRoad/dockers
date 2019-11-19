@@ -1,0 +1,1 @@
+docker run -it -p 8066:8066 --name bet -v $PWD/bet365:/usr/src/app -e TZ="Asia/Shanghai" bet365:1.0
