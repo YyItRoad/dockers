@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "b2bua_simple",
+            "type": "python",
+            "request": "launch",
+            "module": "sippy.b2bua_num",
+            "console": "integratedTerminal",
+            "args": [
+                "-f",
+                "-L",
+                "./log/sippy.log"
+            ]
+        },
+        {
+            "name": "b2bua_radius",
+            "type": "python",
+            "request": "launch",
+            "module": "sippy.b2bua_radius",
+            "console": "integratedTerminal"
+        }
+    ]
+}
