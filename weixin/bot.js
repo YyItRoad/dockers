@@ -43,7 +43,11 @@ async function find (name = '文件传输助手', room = false) {
         if (room) {
             user = await bot.Room.find({ topic: name });
         } else {
-            user = await bot.Contact.find({ name });
+            if (name == 'self') {
+                user = bot.userSelf();
+            } else {
+                user = await bot.Contact.find({ name });
+            }
         }
         return user;
     } catch (error) {
