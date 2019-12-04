@@ -40,14 +40,11 @@ function onError (e) {
 async function find (name = '文件传输助手', room = false) {
     try {
         let user;
+        if (name == 'self') return bot.userSelf();
         if (room) {
             user = await bot.Room.find({ topic: name });
         } else {
-            if (name == 'self') {
-                user = bot.userSelf();
-            } else {
-                user = await bot.Contact.find({ name });
-            }
+            user = await bot.Contact.find({ name });
         }
         return user;
     } catch (error) {
@@ -58,7 +55,6 @@ async function find (name = '文件传输助手', room = false) {
 async function sendMsg (to, msg, group) {
     let user = await find(to, group == 1);
     if (user && msg && msg.length > 0) {
-        log.info(`${user} -> ${msg}`);
         return user.say(msg)
     } else {
         return '用户不存在';
@@ -72,6 +68,7 @@ app.get('/', function (req, res) {
 
 app.get('/send', async function (req, res) {
     if (req.query.key === SecretKey) {
+        log.info(`${req.query.name} -> ${req.query.msg}`);
         res.send(await sendMsg(req.query.name, req.query.msg, req.query.group));
     } else {
         res.redirect('/');
