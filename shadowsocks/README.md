@@ -1,0 +1,1 @@
+docker run -dt --name ss -p 80:80 -p 443:443/udp mritd/shadowsocks -m "ss-server" -s "-s 0.0.0.0 -p 80 -m chacha20 -k 123456789 --fast-open" -x -e "kcpserver" -k "-t 127.0.0.1:80 -l :443 -mode fast2"
