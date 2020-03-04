@@ -16,7 +16,8 @@
 ### 3.常用命令
 1. 状态`sofia status`
 2. 系统参数`global_getvar`
-3. 开启或关闭Sip的SDP信息`sofia profile internal siptrace on / off` 
+3. 日志级别`console loglevel 4`
+4. 开启或关闭Sip的SDP信息`sofia profile internal siptrace on / off` 
 
 ### 4.esl
 1. 外呼`originate sofia/external/${called}@${vos_ip} &echo XML default test ${caller}`

@@ -1,4 +1,10 @@
 # dockers
+## Centos7 安装
+```
+curl -sSL https://get.docker.com/ | sh
+sudo systemctl enable docker
+sudo systemctl start docker
+ ```
 
 ### [1.bet365自动下注](./bet365/README.md)
 
